@@ -1,7 +1,6 @@
 package com.example.tugasbottomnavigation
 
 import android.os.Bundle
-import android.view.Menu
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,6 +23,9 @@ class MainActivity : AppCompatActivity() {
         with(binding) {
             val navController = findNavController(R.id.nav_host_fragment)
             bottomNavigationView.setupWithNavController(navController)
+
+            bottomNavigationView.itemIconTintList = resources.getColorStateList(R.color.nav_item_color_state, theme)
+            bottomNavigationView.itemTextColor = resources.getColorStateList(R.color.nav_item_color_state, theme)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -32,10 +34,4 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.menu_options, menu)
-//        return true
-//    }
-
 }

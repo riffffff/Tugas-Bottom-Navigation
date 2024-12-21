@@ -34,16 +34,6 @@ class TicketFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        with(binding) {
-            val action = TicketFragmentDirections.actionTicketFragmentToHomeFragment()
-            btnBuy.setOnClickListener {
-                findNavController().navigate(action)
-            }
-        }
-    }
-
     companion object {
         /**
          * Use this factory method to create a new instance of
